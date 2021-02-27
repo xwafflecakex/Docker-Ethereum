@@ -1,4 +1,3 @@
-
 // This is the server for ethereum dapp.
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -22,7 +21,7 @@ app.use(
 
 // use the routes specified in route folder
 app.use("/", contractAPIRoutes);
-app.use("/",smartContractAPIRoutes);
+app.use("/", smartContractAPIRoutes);
 
 app.use(function(err, req,res, next){
     res.status(422).send({error: err.message});
