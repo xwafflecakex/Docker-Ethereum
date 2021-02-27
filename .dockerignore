@@ -1,0 +1,5 @@
+# It will ignore the node_modules and client directory 
+node_modules/
+client/
+.env
+.git

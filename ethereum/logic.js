@@ -5,7 +5,8 @@ const compileContract = require("./build/Message.json");
 // Contract object deployed on network (ganache-cli or testnet or mainnet)
 // network can be selected in web3 file
 
-// cont
+// This will return the contract object/instance which was deployed on the network using deploy.js.
+//  This object will then call the smart contract
 const getContractObject = () => {
     
     const contractReceipt = require("./receipt-ganache.json");
