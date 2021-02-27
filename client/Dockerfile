@@ -10,6 +10,7 @@ COPY ./package.json .
 COPY package-lock.json ./
 # install dependencies
 RUN npm install -g npm@7.6.0
+RUN npm install nodemon -- save
 
 # COPY client directory folder
 COPY . .

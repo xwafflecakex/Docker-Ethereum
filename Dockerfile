@@ -12,6 +12,7 @@ COPY ./package.json .
 
 # install dependencies
 RUN npm install -g npm@7.6.0
+RUN npm install nodemon
 
 # COPY client directory folder
 COPY . .
