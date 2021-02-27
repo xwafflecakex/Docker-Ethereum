@@ -1,4 +1,4 @@
-version: "1"
+version: "3"
 services:
   ganache:
     build:
@@ -14,8 +14,12 @@ services:
       - ganache
     
   react:
-    build: ./client
+    build: 
+      context: ./client
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
     depends_on:
       - dapp
+
+  #   // Package updater: https://updatepackagejson.com/

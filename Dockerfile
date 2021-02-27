@@ -1,6 +1,5 @@
-
 # using node alpine as base image
-FROM node:alpine
+FROM node:10-alpine
 
 # working dir ./app
 WORKDIR /app
@@ -9,16 +8,16 @@ WORKDIR /app
 RUN apk update && apk upgrade && apk add --no-cache bash git openssh
 RUN apk add --update python krb5 krb5-libs gcc make g++ krb5-dev
 
-# Copy the package.json
+# Copy react package.json
 COPY ./package.json .
 
-# Install the dependencies
-RUN npm install
+# install dependencies
+RUN npm install -g npm@7.6.0
 
-# Copy the server and ethereum module
+# COPY client directory folder
 COPY . .
 
-# set the default command
+# default command
 CMD ["npm","start"]
 
 # Docker build command: docker build -t ganache .
